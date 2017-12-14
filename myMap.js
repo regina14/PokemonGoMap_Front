@@ -24,8 +24,8 @@ function loadMapScenario() {
         var map_item = map_manager.map_items[i];
         var iconUrl = 'https://raw.githubusercontent.com/chenditc-bittiger/pokemon_week3_fronend/master/images/pushpin_images/pokemon/'+ map_item['pokemon_id'] + '.png';
         console.log(iconUrl);
-        var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), { icon: iconUrl
-                                                               );
+        var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), 
+                                                 { icon: iconUrl});
         map.entities.push(pushpin);
     }
     
