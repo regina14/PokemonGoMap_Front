@@ -18,9 +18,10 @@ map_manager.map_items = [
     }
 ]
 
+//add count_down time as title for each pokemon
 function get_counter_down_time_from_timpstamp(expire){
     var now_time = new Date().getTime() / 1000;
-    var time_left = expire  - now_time;   // unit: second
+    var time_left = expire / 1000  - now_time;   // unit: second
     var second = Math.floor(time_left % 60);
     var minute = Math.floor(time_left / 60);
     return minute + ":" + second;
