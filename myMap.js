@@ -22,6 +22,8 @@ map_manager.map_items = [
 function get_counter_down_time_from_timpstamp(expire){
     var now_time = new Date().getTime() / 1000;
     var time_left = expire / 1000  - now_time;   // unit: second
+    console.log("now_time:', now_time);
+    console.log("expire_time:', expire_time);          
     var second = Math.floor(time_left % 60);
     var minute = Math.floor(time_left / 60);
     return minute + ":" + second;
