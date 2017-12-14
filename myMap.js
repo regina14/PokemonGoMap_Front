@@ -32,7 +32,7 @@ function get_counter_down_time_from_timpstamp(expire){
 
 function loadMapScenario() {
     var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
-    refresh_pokemon();
+    windown.setInterval(refresh_pokemon, 1000);
 }
 
 function refresh_pokemon(){
