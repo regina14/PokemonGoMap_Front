@@ -18,6 +18,28 @@ map_manager.map_items = [
     }
 ]
 
+function query_pokemon_data(){
+    var bounds = map_manager.map.getBounds();
+    var apigClient = apigClientFactory.newClient();
+    
+    var params = {
+        north: bounds.getNorth(),
+        south: bounds.getSouth(),
+        west: bounds.getWest(),
+        east: bounds.getEast(),
+    };
+    var body = { };
+    var additionalParams = { };
+    
+    apigClient.mapPokemonGet(params, body, additionalParams)
+        .then(function(result){
+            //This is where you would put a success callback
+            map_manager.map_items = result.data;
+        }).catch( function(result){
+            //This is where you would put an error callback
+            console.log(result)
+        });  
+}
 //add count_down time as title for each pokemon
 function get_counter_down_time_from_timpstamp(expire){
     var now_time = new Date().getTime() / 1000;
