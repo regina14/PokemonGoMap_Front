@@ -26,7 +26,7 @@ function loadMapScenario() {
         //console.log(iconUrl);
         var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), 
                                                  //{ title: get_counter_down_time_from_expire_epoch(map_item['expire']), 
-                                                    icon: iconUrl});
+                                                 {icon: iconUrl});
     }
     map.entities.push(pushpin);
 }
