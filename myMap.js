@@ -24,6 +24,7 @@ function loadMapScenario() {
         var map_item = map_manager.map_items[i];
         var iconUrl = 'https://raw.githubusercontent.com/chenditc-bittiger/pokemon_week3_fronend/master/images/pushpin_images/pokemon/'+ map_item['pokemon_id'] + '.png';
         console.log(iconUrl);
+        //add location of pokemon
         var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), 
                                                  //{ title: get_counter_down_time_from_expire_epoch(map_item['expire']), 
                                                  {icon: iconUrl});
