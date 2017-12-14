@@ -44,9 +44,9 @@ function query_pokemon_data(){
 function get_counter_down_time_from_timpstamp(expire){
     var now_time = new Date().getTime() / 1000;
     var time_left = expire   - now_time;   // unit: second
-    console.log("now_time:", now_time);
-    console.log("expire_time:", expire); 
-    console.log("left_time:", time_left ); 
+    //console.log("now_time:", now_time);
+    //console.log("expire_time:", expire); 
+    //console.log("left_time:", time_left ); 
     var second = Math.floor(time_left % 60);
     var minute = Math.floor(time_left / 60);
     return minute + ":" + second;
