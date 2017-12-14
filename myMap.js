@@ -6,13 +6,13 @@ var map_manager = {
 map_manager.map_items = [
     {
       "pokemon_id" : 13,
-      "expire" : 1523287244,
+      "expire" : 1523287244000,
       "longitude" : -111.862240,
       "latitude" : 32.8596651,
     },
     {
       "pokemon_id" : 27,
-      "expire" : 1513987244,
+      "expire" : 1513987244000,
       "longitude" : -111.862240,
       "latitude" : 33.289580,
     }
@@ -35,6 +35,7 @@ function query_pokemon_data(){
         .then(function(result){
             //This is where you would put a success callback
             map_manager.map_items = result.data;
+            console.log(result.data)
         }).catch( function(result){
             //This is where you would put an error callback
             console.log(result)
@@ -43,7 +44,7 @@ function query_pokemon_data(){
 //add count_down time as title for each pokemon
 function get_counter_down_time_from_timpstamp(expire){
     var now_time = new Date().getTime() / 1000;
-    var time_left = expire   - now_time;   // unit: second
+    var time_left = expire /1000 - now_time;   // unit: second
     //console.log("now_time:", now_time);
     //console.log("expire_time:", expire); 
     //console.log("left_time:", time_left ); 
