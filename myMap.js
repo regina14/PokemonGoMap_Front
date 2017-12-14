@@ -49,8 +49,8 @@ function refresh_pokemon(){
         pushpins.push(pushpin);
     }
     layer.add(pushpins);
-    map_manger.map.layers.clear();
-    map_manger.map.layers.insert(layer);
+    map_manager.map.layers.clear();
+    map_manager.map.layers.insert(layer);
     //return layer;
 }
     
