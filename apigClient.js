@@ -114,9 +114,7 @@ apigClientFactory.newClient = function (config) {
             queryParams: apiGateway.core.utils.parseParametersToObject(params, ['east', 'south', 'north', 'west']),
             body: body
         };
-        console.log("request: " + mapPokemonGetRequest)
-        console.log("authType: " + authType)
-        console.log("configkey: " + config.apiKey)
+        
         return apiGatewayClient.makeRequest(mapPokemonGetRequest, authType, additionalParams, config.apiKey);
     };
     
