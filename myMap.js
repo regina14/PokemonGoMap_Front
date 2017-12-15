@@ -28,10 +28,12 @@ function query_pokemon_data(){
         west: bounds.getWest(),
         east: bounds.getEast(),
     };
+    /*
     console.log("north: "+  bounds.getNorth())
     console.log("south: "+  bounds.getSouth())
     console.log("east: "+  bounds.getEast())
     console.log("west: "+  bounds.getWest())
+    */
     
     var body = { };
     var additionalParams = { };
@@ -39,8 +41,9 @@ function query_pokemon_data(){
     apigClient.mapPokemonGet(params, body, additionalParams)
         .then(function(result){
             //This is where you would put a success callback
-            console.log("hrere" + result.data)
+            //console.log("hrere" + result.data)
             map_manager.map_items = result.data; 
+            console.log("hrere" + result.data)
         }).catch( function(result){
             //This is where you would put an error callback
             console.log(result)
