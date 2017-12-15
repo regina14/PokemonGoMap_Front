@@ -3,8 +3,7 @@ var map_manager = {
     "map_items" : []
 }
 
-map_manager.map_items = []
-/**
+map_manager.map_items = [
 {
       "pokemon_id" : 13,
       "expire" : 1523287244000,
@@ -17,7 +16,7 @@ map_manager.map_items = []
       "longitude" : -111.862240,
       "latitude" : 33.289580,
     }
-*/
+]
 
 function query_pokemon_data(){
     var bounds = map_manager.map.getBounds();
