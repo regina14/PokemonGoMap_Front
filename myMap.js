@@ -50,9 +50,6 @@ function query_pokemon_data(){
 function get_counter_down_time_from_timpstamp(expire){
     var now_time = new Date().getTime() / 1000;
     var time_left = expire /1000 - now_time;   // unit: second
-    //console.log("now_time:", now_time);
-    //console.log("expire_time:", expire); 
-    //console.log("left_time:", time_left ); 
     var second = Math.floor(time_left % 60);
     var minute = Math.floor(time_left / 60);
     return minute + ":" + second;
@@ -61,7 +58,7 @@ function get_counter_down_time_from_timpstamp(expire){
 function loadMapScenario() {
     var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
     map_manager.map = map
-    query_pokemon_data();
+    window.setInterval(query_pokemon_data,1000);
     window.setInterval(refresh_pokemon, 1000);
 }
 
@@ -71,6 +68,7 @@ function refresh_pokemon(){
     
     for (var i in map_manager.map_items){
         var map_item = map_manager.map_items[i];
+        console.log(map_item);
         var count_down = get_counter_down_time_from_timpstamp(map_item['expire'])
         var iconUrl = 'https://raw.githubusercontent.com/chenditc-bittiger/pokemon_week3_fronend/master/images/pushpin_images/pokemon/'+ map_item['pokemon_id'] + '.png';    
         var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), 
