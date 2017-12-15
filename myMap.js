@@ -29,6 +29,10 @@ function query_pokemon_data(){
         east: bounds.getEast(),
     };
     console.log("north: "+  bounds.getNorth())
+    console.log("south: "+  bounds.getSouth())
+    console.log("east: "+  bounds.getEast())
+    console.log("west: "+  bounds.getWest())
+    
     var body = { };
     var additionalParams = { };
     
