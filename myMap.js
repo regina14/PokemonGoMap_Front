@@ -28,7 +28,7 @@ function query_pokemon_data(){
         west: bounds.getWest(),
         east: bounds.getEast(),
     };
-    console.log("north": bounds.getNorth())
+    console.log("north: "+  bounds.getNorth())
     var body = { };
     var additionalParams = { };
     
